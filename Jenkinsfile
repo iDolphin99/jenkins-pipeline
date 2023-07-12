@@ -15,6 +15,17 @@ pipeline {
          steps {
             echo 'deploying the applicaiton...'
          }
-     }
+      }
    }
-}
+   post {
+         always {
+            echo 'building..'
+         }
+         success {
+               echo 'success'
+         }
+         failure {
+               echo 'failure'
+         }
+      }
+   }
